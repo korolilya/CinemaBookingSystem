@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CinemaBookingSystem.Entities
 {
-    class Seance
+    public class Seance
     {
         public int Id { get; set; }
         public DateTime Time { get; set; }
