@@ -1,4 +1,5 @@
 ﻿using CinemaBookingSystem.Entities;
+using MainLogic.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,6 +13,8 @@ namespace CinemaBookingSystem
     {
         public DbSet<Cinema> Cinemas { get; set; }
         public DbSet<Movie> Movies { get; set; }
-        public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<Seance> Seances { get; set; }
+
+        public CinemasDB(): base("localsql"){}
     }
 }
