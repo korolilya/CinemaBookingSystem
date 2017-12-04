@@ -12,5 +12,6 @@ namespace CinemaBookingSystem.Entities
         public string Name { get; set; }
         public string Location { get; set; }
         public List<Movie> Movies { get; set; }
+        // comment
     }
 }
