@@ -51,13 +51,13 @@ namespace MainLogic.Migrations
                {
                    Name="Родина",
                    Location="метро Семеновская",
-                   Movies={movies[2], movies[1]}
+                   //Movies={movies[2], movies[1]}
                },
                new Cinema
                {
                    Name="Кронверк Синема",
                    Location="метро Семеновская",
-                   Movies={movies[2], movies[0]}
+                   //Movies={movies[2], movies[0]}
                }
             };
             Seance[] seances =
@@ -66,7 +66,7 @@ namespace MainLogic.Migrations
                 {
                     Time= new DateTime(2017, 11, 28, 13,40,0),
                     Cinema= cinemas[0],
-                    Movie=cinemas[0].Movies[0],
+                    Movie= movies[2],
                     QuantityOfTickets=180,
                     PriceOfTickets= 450
                 }
