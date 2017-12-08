@@ -1,0 +1,33 @@
+﻿<Page x:Class="CinemaBookingSystem.BookingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CinemaBookingSystem"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="500"
+      Title="BookingPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" Margin="10.333,10,10.333,0" Text="BookingSystem" TextAlignment="Center" VerticalAlignment="Top" Height="25" Width="146" FontSize="18" FontStyle="Italic" TextDecorations="{x:Null}" FontWeight="Bold"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Stretch" Margin="10" Grid.Row="1" TextAlignment="Center" Text="Choose the cinema" VerticalAlignment="Stretch" FontSize="16" FontWeight="Bold" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Stretch" Margin="10,10,9.667,10" Grid.Row="1" TextAlignment="Center" Text="Number of tickets" VerticalAlignment="Stretch" FontSize="16" FontWeight="Bold" FontStyle="Italic"/>
+        <TextBox Name="TextBoxNumber" HorizontalAlignment="Stretch" Margin="10,10,9.667,10" Grid.Row="2" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Stretch" FontSize="14"/>
+        <ListBox Name="ListBoxFilms" HorizontalAlignment="Stretch" Margin="10" Grid.Row="3" VerticalAlignment="Stretch" Grid.ColumnSpan="3" FontSize="14"/>
+        <Button Content="Book" Grid.Column="2" HorizontalAlignment="Stretch" Margin="10" Grid.Row="4" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" FontStyle="Italic" />
+        <ComboBox Grid.Column="2" HorizontalAlignment="Stretch" Margin="10" Grid.Row="2" VerticalAlignment="Stretch" FontSize="14"/>
+
+    </Grid>
+</Page>

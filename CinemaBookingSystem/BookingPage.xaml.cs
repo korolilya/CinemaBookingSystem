@@ -16,15 +16,13 @@ using System.Windows.Shapes;
 namespace CinemaBookingSystem
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для BookingPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class BookingPage : Page
     {
-        BookingPage bp = new BookingPage();
-        public MainWindow()
+        public BookingPage()
         {
             InitializeComponent();
-            frameMainWindow.Navigate(bp);
         }
     }
 }
