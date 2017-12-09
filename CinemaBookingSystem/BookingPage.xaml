@@ -24,10 +24,10 @@
         <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" Margin="10.333,10,10.333,0" Text="BookingSystem" TextAlignment="Center" VerticalAlignment="Top" Height="25" Width="146" FontSize="18" FontStyle="Italic" TextDecorations="{x:Null}" FontWeight="Bold"/>
         <TextBlock Grid.Column="2" HorizontalAlignment="Stretch" Margin="10" Grid.Row="1" TextAlignment="Center" Text="Choose the cinema" VerticalAlignment="Stretch" FontSize="16" FontWeight="Bold" FontStyle="Italic"/>
         <TextBlock HorizontalAlignment="Stretch" Margin="10,10,9.667,10" Grid.Row="1" TextAlignment="Center" Text="Number of tickets" VerticalAlignment="Stretch" FontSize="16" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBox Name="TextBoxNumber" HorizontalAlignment="Stretch" Margin="10,10,9.667,10" Grid.Row="2" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Stretch" FontSize="14"/>
-        <ListBox Name="ListBoxFilms" HorizontalAlignment="Stretch" Margin="10" Grid.Row="3" VerticalAlignment="Stretch" Grid.ColumnSpan="3" FontSize="14"/>
-        <Button Content="Book" Grid.Column="2" HorizontalAlignment="Stretch" Margin="10" Grid.Row="4" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" FontStyle="Italic" />
-        <ComboBox Grid.Column="2" HorizontalAlignment="Stretch" Margin="10" Grid.Row="2" VerticalAlignment="Stretch" FontSize="14"/>
+        <TextBox x:Name="TextBoxNumber" HorizontalAlignment="Stretch" Margin="10,10,9.667,10" Grid.Row="2" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Stretch" FontSize="14"/>
+        <ListBox x:Name="ListBoxFilms" HorizontalAlignment="Stretch" Margin="10" Grid.Row="3" VerticalAlignment="Stretch" Grid.ColumnSpan="3" FontSize="14" SelectionChanged="ListBoxFilms_SelectionChanged"/>
+        <Button x:Name="ButtonBook"  Content="Book" Grid.Column="2" HorizontalAlignment="Stretch" Margin="10" Grid.Row="4" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" FontStyle="Italic" />
+        <ComboBox x:Name="ComboBoxCinemas" Grid.Column="2" HorizontalAlignment="Stretch" Margin="10" Grid.Row="2" VerticalAlignment="Stretch" FontSize="14"/>
 
     </Grid>
 </Page>

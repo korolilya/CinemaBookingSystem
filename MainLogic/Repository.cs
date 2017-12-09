@@ -34,5 +34,17 @@ namespace MainLogic
             }
         }
 
+        /*public IEnumerable<Seance> Seance
+        {
+            get
+            {
+                using (var context = new CinemasDB())
+                    return context.Seances
+                    .Include(s => s.Cinema)
+                    .Include(s=>s.Movie)                   
+                    .ToList();
+            }
+        }*/
+
     }
 }

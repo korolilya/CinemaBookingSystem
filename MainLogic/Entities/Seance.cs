@@ -10,7 +10,7 @@ namespace CinemaBookingSystem.Entities
     {
         public int Id { get; set; }
         public DateTime Time { get; set; }
-        public Cinema Cinema { get; set; }
+        public Cinema CinemaFilm { get; set; }
         public Movie Movie { get; set; }
         public int QuantityOfTickets { get; set; }
         public double PriceOfTickets { get; set; }

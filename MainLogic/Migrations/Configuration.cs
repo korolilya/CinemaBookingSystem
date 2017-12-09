@@ -2,6 +2,7 @@ namespace MainLogic.Migrations
 {
     using CinemaBookingSystem.Entities;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -15,11 +16,7 @@ namespace MainLogic.Migrations
 
         protected override void Seed(CinemaBookingSystem.CinemasDB context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
-
+           
             Movie[] movies =
             {
                 new Movie
@@ -51,6 +48,17 @@ namespace MainLogic.Migrations
                {
                    Name="Родина",
                    Location="метро Семеновская",
+                   Movies= new List<Seance>
+                   {
+                       new Seance
+                       {
+                           Time= new DateTime(2017, 11, 28, 13,40,0),
+                   // Cinema= cinemas[0],
+                    Movie= movies[2],
+                    QuantityOfTickets=180,
+                    PriceOfTickets= 450
+                       }
+                   }
                    //Movies={movies[2], movies[1]}
                },
                new Cinema
@@ -58,9 +66,28 @@ namespace MainLogic.Migrations
                    Name="Кронверк Синема",
                    Location="метро Семеновская",
                    //Movies={movies[2], movies[0]}
+                   Movies= new List<Seance>
+                   {
+                   new Seance
+                       {
+                           Time= new DateTime(2017, 11, 28, 15,40,0),
+                   // Cinema= cinemas[0],
+                    Movie= movies[1],
+                    QuantityOfTickets=180,
+                    PriceOfTickets= 450
+                       },
+                   new Seance
+                       {
+                           Time= new DateTime(2017, 11, 28, 19,30,0),
+                   // Cinema= cinemas[0],
+                    Movie= movies[0],
+                    QuantityOfTickets=180,
+                    PriceOfTickets= 650
+                       }
+                   }
                }
             };
-            Seance[] seances =
+            /*Seance[] seances =
             {
                 new Seance
                 {
@@ -70,7 +97,7 @@ namespace MainLogic.Migrations
                     QuantityOfTickets=180,
                     PriceOfTickets= 450
                 }
-            };
+            };*/
 
             context.Movies.AddOrUpdate(
                m => m.Name,
@@ -82,10 +109,10 @@ namespace MainLogic.Migrations
                cinemas
            );
 
-            context.Seances.AddOrUpdate(
+           /* context.Seances.AddOrUpdate(
                s=>s.Time,
                seances
-           );
+           );*/
         }
     }
 }

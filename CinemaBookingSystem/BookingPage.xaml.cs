@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CinemaBookingSystem.Entities;
+using MainLogic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,18 @@ namespace CinemaBookingSystem
     /// </summary>
     public partial class BookingPage : Page
     {
+        Repository _repository = new Repository();
+
         public BookingPage()
         {
-            InitializeComponent();
+            InitializeComponent();            
+            ComboBoxCinemas.ItemsSource = _repository.Cinemas;           
+        }
+
+        private void ListBoxFilms_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var cinema = ComboBoxCinemas.SelectedItem as Cinema;
+            //ListBoxFilms.ItemsSource = _repository.Seance.Where(s=>s.Cinema.Id==cinema.Id);
         }
     }
 }
