@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CinemaBookingSystem
 {
-    class CinemasDB : DbContext
+    public class CinemasDB : DbContext
     {
         public DbSet<Cinema> Cinemas { get; set; }
         public DbSet<Movie> Movies { get; set; }
