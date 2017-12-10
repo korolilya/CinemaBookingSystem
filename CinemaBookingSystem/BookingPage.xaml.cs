@@ -27,7 +27,7 @@ namespace CinemaBookingSystem
         public BookingPage()
         {
             InitializeComponent();            
-            ComboBoxCinemas.ItemsSource = _repository.Cinemas;           
+            ComboBoxCinemas.ItemsSource = _repository.Cinemas.Select(c=>c.Name);           
         }
 
         private void ListBoxFilms_SelectionChanged(object sender, SelectionChangedEventArgs e)

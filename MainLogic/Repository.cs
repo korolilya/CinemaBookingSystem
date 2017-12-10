@@ -15,8 +15,9 @@ namespace MainLogic
             {
                 using (var context = new CinemasDB())
                     return context.Cinemas
-                    .Include(c => c.Name)
-                    .Include(c => c.Location).ToList();
+                    //.Include(c => c.Name)
+                    //.Include(c => c.Location)
+                    .ToList();
             }
         }
 
