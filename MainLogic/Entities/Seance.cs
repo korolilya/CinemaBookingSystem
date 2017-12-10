@@ -14,5 +14,13 @@ namespace CinemaBookingSystem.Entities
         public Movie Movie { get; set; }
         public int QuantityOfTickets { get; set; }
         public double PriceOfTickets { get; set; }
+
+        public string Info
+        {
+            get
+            {
+                return $"{CinemaFilm}";
+            }
+        }
     }
 }

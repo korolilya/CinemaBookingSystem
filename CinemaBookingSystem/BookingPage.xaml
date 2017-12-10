@@ -25,9 +25,23 @@
         <TextBlock Grid.Column="2" HorizontalAlignment="Stretch" Margin="10" Grid.Row="1" TextAlignment="Center" Text="Choose the cinema" VerticalAlignment="Stretch" FontSize="16" FontWeight="Bold" FontStyle="Italic"/>
         <TextBlock HorizontalAlignment="Stretch" Margin="10,10,9.667,10" Grid.Row="1" TextAlignment="Center" Text="Number of tickets" VerticalAlignment="Stretch" FontSize="16" FontWeight="Bold" FontStyle="Italic"/>
         <TextBox x:Name="TextBoxNumber" HorizontalAlignment="Stretch" Margin="10,10,9.667,10" Grid.Row="2" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Stretch" FontSize="14"/>
-        <ListBox x:Name="ListBoxFilms" HorizontalAlignment="Stretch" Margin="10" Grid.Row="3" VerticalAlignment="Stretch" Grid.ColumnSpan="3" FontSize="14" SelectionChanged="ListBoxFilms_SelectionChanged"/>
         <Button x:Name="ButtonBook"  Content="Book" Grid.Column="2" HorizontalAlignment="Stretch" Margin="10" Grid.Row="4" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" FontStyle="Italic" />
-        <ComboBox x:Name="ComboBoxCinemas" Grid.Column="2" HorizontalAlignment="Stretch" Margin="10" Grid.Row="2" VerticalAlignment="Stretch" FontSize="14"/>
+        <ComboBox x:Name="ComboBoxCinemas" Grid.Column="2" HorizontalAlignment="Stretch" Margin="10" Grid.Row="2" VerticalAlignment="Stretch" FontSize="14" SelectionChanged="ComboBoxCinemas_SelectionChanged" DisplayMemberPath="Name"/>
+        <ListBox x:Name="ListBoxFilms" HorizontalAlignment="Stretch" Margin="10" Grid.Row="3" VerticalAlignment="Stretch" Grid.ColumnSpan="3" FontSize="14" SelectionChanged="ListBoxFilms_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock FontSize="15">
+                            (<TextBlock Text="{Binding Time}" Foreground="Red"/>) <TextBlock Text="{Binding Movie}"></TextBlock>
+                        </TextBlock>
+                        <TextBlock FontSize="13">
+                           Total amount of tickets: <TextBlock Text="{Binding QuantityOfTickets}"/> 
+                           Price: <TextBlock Text="{Binding PriceOfTickets}"></TextBlock>
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
     </Grid>
 </Page>

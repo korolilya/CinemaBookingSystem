@@ -14,9 +14,8 @@ namespace MainLogic
             get
             {
                 using (var context = new CinemasDB())
-                    return context.Cinemas
-                    //.Include(c => c.Name)
-                    //.Include(c => c.Location)
+                    return context.Cinemas                   
+                    .Include(c=>c.Movies)
                     .ToList();
             }
         }
@@ -27,25 +26,25 @@ namespace MainLogic
             {
                 using (var context = new CinemasDB())
                     return context.Movies
-                    .Include(m => m.Name)
+                    /*.Include(m => m.Name)
                     .Include(m => m.Genre)
                     .Include(m => m.Duration)
-                    .Include(m => m.Year)
+                    .Include(m => m.Year)*/
                     .ToList();
             }
         }
 
-        /*public IEnumerable<Seance> Seance
+        public IEnumerable<Seance> Seance
         {
             get
             {
                 using (var context = new CinemasDB())
                     return context.Seances
-                    .Include(s => s.Cinema)
+                    .Include(s => s.CinemaFilm)
                     .Include(s=>s.Movie)                   
                     .ToList();
             }
-        }*/
+        }
 
     }
 }

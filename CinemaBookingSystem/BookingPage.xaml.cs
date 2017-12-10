@@ -27,13 +27,21 @@ namespace CinemaBookingSystem
         public BookingPage()
         {
             InitializeComponent();            
-            ComboBoxCinemas.ItemsSource = _repository.Cinemas.Select(c=>c.Name);           
+            ComboBoxCinemas.ItemsSource = _repository.Cinemas.ToList();           
         }
 
         private void ListBoxFilms_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+           
+            //var cinema = ((ComboBoxItem)ComboBoxCinemas.SelectedItem).Content as Cinema; 
+            /*var cinema = ComboBoxCinemas.SelectedItem as Cinema;
+            ListBoxFilms.ItemsSource = _repository.Seance.Where(s=>s.CinemaFilm.Id==cinema.Id);*/
+        }
+
+        private void ComboBoxCinemas_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
             var cinema = ComboBoxCinemas.SelectedItem as Cinema;
-            //ListBoxFilms.ItemsSource = _repository.Seance.Where(s=>s.Cinema.Id==cinema.Id);
+            ListBoxFilms.ItemsSource = cinema.Movies; //_repository.Seance.Where(s => s.CinemaFilm.Id == cinema.Id);
         }
     }
 }
