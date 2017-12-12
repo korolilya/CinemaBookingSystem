@@ -23,6 +23,7 @@ namespace CinemaBookingSystem
     public partial class BookingPage : Page
     {
         Repository _repository = new Repository();
+        ChooseSeatsPage CP = new ChooseSeatsPage();
 
         public BookingPage()
         {
@@ -42,6 +43,11 @@ namespace CinemaBookingSystem
         {
             var cinema = ComboBoxCinemas.SelectedItem as Cinema;
             ListBoxFilms.ItemsSource = cinema.Movies; //_repository.Seance.Where(s => s.CinemaFilm.Id == cinema.Id);
+        }
+
+        private void ButtonBook_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(CP);
         }
     }
 }
