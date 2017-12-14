@@ -15,7 +15,7 @@ namespace MainLogic
             {
                 using (var context = new CinemasDB())
                     return context.Cinemas                   
-                    .Include(c=>c.Movies)
+                    .Include(c=>c.Movies.Select(m=>m.Movie))
                     .ToList();
             }
         }
@@ -34,7 +34,7 @@ namespace MainLogic
             }
         }
 
-        public IEnumerable<Seance> Seance
+       /* public IEnumerable<Seance> Seance
         {
             get
             {
@@ -44,7 +44,7 @@ namespace MainLogic
                     .Include(s=>s.Movie)                   
                     .ToList();
             }
-        }
+        }*/
 
     }
 }

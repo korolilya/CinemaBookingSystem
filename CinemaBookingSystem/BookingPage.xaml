@@ -30,7 +30,7 @@
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock FontSize="15">
-                            (<TextBlock Text="{Binding Time}" Foreground="Red"/>) <TextBlock Text="{Binding Movie}"></TextBlock>
+                            (<TextBlock Text="{Binding Time}" Foreground="Red"/>) <TextBlock Text="{Binding Movie.Name}" FontWeight="UltraBlack" FontStyle="Italic"></TextBlock>
                         </TextBlock>
                         <TextBlock FontSize="13">
                            Total amount of tickets: <TextBlock Text="{Binding QuantityOfTickets}"/> 
