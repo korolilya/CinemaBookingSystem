@@ -10,7 +10,22 @@
 
     <Grid>
         <Grid Name="Seats" Grid.Column="1" Margin="10" Grid.Row="2">
-
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
         </Grid>
         <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" TextAlignment="Center" Margin="30" Text="Choose The Seats" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
         <TextBlock Grid.Column="2" HorizontalAlignment="Stretch" Margin="70,10,70,30" Text="Ticket Price" TextAlignment="Center" VerticalAlignment="Stretch" FontSize="24" FontWeight="Bold" FontStyle="Italic"/>

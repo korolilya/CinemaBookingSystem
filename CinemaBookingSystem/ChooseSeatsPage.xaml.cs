@@ -23,35 +23,38 @@ namespace CinemaBookingSystem
         public ChooseSeatsPage()
         {
             InitializeComponent();
+            AddToGrid(25, CreateButtons(25));
         }
-        //private Button[,] CreateButtons(int quantity)
-        //{
-        //    Button[,] buttons = new Button[quantity, quantity];
-        //    for (int i = 0; i < quantity; i++)
-        //    {
-        //        for (int j = 0; j < quantity; j++)
-        //        {
-        //            buttons[i, j] = new Button();
-        //            buttons[i, j].Width = 25;
-        //            buttons[i, j].Height = 25;
-        //            buttons[i, j].VerticalAlignment = System.Windows.VerticalAlignment.Top;
-        //            buttons[i, j].HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
-        //            buttons[i, j].Margin = new Thickness(10);
-        //        }
-        //    }
-        //    return buttons;
-        //}
+        private Button[,] CreateButtons(int quantity)
+        {
+            Button[,] buttons = new Button[quantity, quantity];
+            for (int i = 0; i < quantity; i++)
+            {
+                for (int j = 0; j < quantity; j++)
+                {
+                    buttons[i, j] = new Button();
+                    buttons[i, j].Width = 25;
+                    buttons[i, j].Height = 25;
+                    buttons[i, j].VerticalAlignment = System.Windows.VerticalAlignment.Top;
+                    buttons[i, j].HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
+                    buttons[i, j].Margin = new Thickness(10);
+                }
+            }
+            return buttons;
+        }
 
-        //private void AddToGrid(int quantity, Button[,] buttons)
-        //{
-        //    for (int i = 0; i < quantity; i++)
-        //    {
-        //        for (int j = 0; j < quantity; j++)
-        //        {
-                    
-        //        }
-        //    }
-        //}
+        private void AddToGrid(int quantity, Button[,] buttons)
+        {
+            for (int i = 0; i < quantity; i++)
+            {
+                for (int j = 0; j < quantity; j++)
+                {
+                    Grid.SetColumn(buttons[i, j], j);
+                    Grid.SetRow(buttons[i, j], i);
+                    Seats.Children.Add(buttons[i, j]);
+                }
+            }
+        }
 
     }
 }
