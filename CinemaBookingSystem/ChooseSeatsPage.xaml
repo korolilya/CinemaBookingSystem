@@ -5,10 +5,32 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:CinemaBookingSystem"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="600" d:DesignWidth="800"
       Title="ChooseSeatsPage">
 
     <Grid>
-        
+        <Grid Name="Seats" Grid.Column="1" Margin="10" Grid.Row="2">
+
+        </Grid>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" TextAlignment="Center" Margin="30" Text="Choose The Seats" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Stretch" Margin="70,10,70,30" Text="Ticket Price" TextAlignment="Center" VerticalAlignment="Stretch" FontSize="24" FontWeight="Bold" FontStyle="Italic"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" Margin="80,10,80,60" TextAlignment="Center" Grid.Row="3" Text="Total Price" VerticalAlignment="Stretch" FontSize="24" FontWeight="Bold" FontStyle="Italic"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Stretch" Margin="30,70,30,125" TextAlignment="Center" Grid.Row="2" Text="Quantity" VerticalAlignment="Stretch" FontSize="24" FontStyle="Italic" FontWeight="Bold"/>
+        <Button Content="Book" Grid.Column="2" HorizontalAlignment="Stretch" Margin="50,40,50,40" Grid.Row="3" VerticalAlignment="Stretch"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="25" Margin="130,64,130,0" Grid.Row="3" Text="0" TextAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Stretch" Height="25" Margin="70,67,70,0" TextAlignment="Center" Text="0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Stretch" Height="25" Margin="70,150,70,40" Grid.Row="2" TextAlignment="Center"  Text="0" VerticalAlignment="Top" FontSize="14"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
     </Grid>
 </Page>
