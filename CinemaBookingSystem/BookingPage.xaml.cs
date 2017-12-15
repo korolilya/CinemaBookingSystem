@@ -22,8 +22,9 @@ namespace CinemaBookingSystem
     /// </summary>
     public partial class BookingPage : Page
     {
+        public event Action<Cinema> MovieInfo;
         Repository _repository = new Repository();
-        ChooseSeatsPage CP = new ChooseSeatsPage();
+       
 
         public BookingPage()
         {
@@ -34,20 +35,21 @@ namespace CinemaBookingSystem
         private void ListBoxFilms_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
            
-            //var cinema = ((ComboBoxItem)ComboBoxCinemas.SelectedItem).Content as Cinema; 
-            /*var cinema = ComboBoxCinemas.SelectedItem as Cinema;
-            ListBoxFilms.ItemsSource = _repository.Seance.Where(s=>s.CinemaFilm.Id==cinema.Id);*/
+            
         }
 
         private void ComboBoxCinemas_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var cinema = ComboBoxCinemas.SelectedItem as Cinema;
-            ListBoxFilms.ItemsSource = cinema.Movies; //_repository.Seance.Where(s => s.CinemaFilm.Id == cinema.Id);
+            ListBoxFilms.ItemsSource = cinema.Movies; 
+           // MovieInfo?.Invoke(cinema);
         }
-
+        // Как убрать повтор создания переменной cinema?
         private void ButtonBook_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(CP);
+            var cinema = ComboBoxCinemas.SelectedItem as Cinema;
+            MovieInfo?.Invoke(cinema);
+            NavigationService.Navigate(new ChooseSeatsPage(_repository, this));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MainLogic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,19 @@ namespace CinemaBookingSystem
     /// </summary>
     public partial class ChooseSeatsPage : Page
     {
-        public ChooseSeatsPage()
+        Repository _repository;
+        BookingPage _bp;
+        public ChooseSeatsPage(Repository repository, BookingPage bp)
         {
             InitializeComponent();
+            _bp = bp;
+            _repository = repository;
+            bp.MovieInfo += c =>RefreshPrice();
+        }
+
+        public void RefreshPrice()
+        {
+            textBoxPrice.Text = $"";
         }
         //private Button[,] CreateButtons(int quantity)
         //{
