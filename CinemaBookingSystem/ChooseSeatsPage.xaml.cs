@@ -1,4 +1,5 @@
-﻿using MainLogic;
+﻿using CinemaBookingSystem.Entities;
+using MainLogic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,19 +23,19 @@ namespace CinemaBookingSystem
     public partial class ChooseSeatsPage : Page
     {
         Repository _repository;
-        BookingPage _bp;
+        //BookingPage _bp;
         public ChooseSeatsPage(Repository repository, BookingPage bp)
         {
             InitializeComponent();
             AddToGrid(25, CreateButtons(25));
-            _bp = bp;
+           // _bp = bp;
             _repository = repository;
-            bp.MovieInfo += c =>RefreshPrice();
+            bp.MovieInfo +=RefreshPrice;
         }
 
-        public void RefreshPrice()
+        public void RefreshPrice(Seance movie)
         {
-            textBoxPrice.Text = $"";
+            textBlockPrice.Text = $"{movie.Movie.Name}";
         }
         private Button[,] CreateButtons(int quantity)
         {

@@ -21,6 +21,7 @@ namespace CinemaBookingSystem
     public partial class MainWindow : Window
     {
         BookingPage bp = new BookingPage();
+
         public MainWindow()
         {
             InitializeComponent();
