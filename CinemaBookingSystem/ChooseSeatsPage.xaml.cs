@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CinemaBookingSystem.Entities;
+using MainLogic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +22,15 @@ namespace CinemaBookingSystem
     /// </summary>
     public partial class ChooseSeatsPage : Page
     {
-        public ChooseSeatsPage()
+        Repository _repository;        
+        public ChooseSeatsPage(Repository repository, Seance seance)
         {
             InitializeComponent();
-            AddToGrid(25, CreateButtons(25));
+            AddToGrid(25, CreateButtons(25));          
+            textBlockPrice.Text = $"{seance.PriceOfTickets}";
         }
+
+       
         private Button[,] CreateButtons(int quantity)
         {
             Button[,] buttons = new Button[quantity, quantity];

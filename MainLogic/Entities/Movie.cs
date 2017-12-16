@@ -11,6 +11,7 @@ namespace CinemaBookingSystem.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public string Genre { get; set; }
+        public string Plot { get; set; }
         public int Duration { get; set; } // in minutes
         public int Year { get; set; }
         

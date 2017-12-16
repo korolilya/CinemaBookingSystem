@@ -11,18 +11,18 @@ using Newtonsoft.Json;
 
 namespace MainLogic
 {
-    class Server
+    public class Server
     {
         private const string apiKey = "55bff0a0";
-        private string apiUrl = String.Format("http://www.omdbapi.com/?apikey={0}&", apiKey);
+        private string apiUrl = String.Format("http://www.omdbapi.com/?apikey={0}&plot=full&", apiKey);
 
-        /// <summary>
+        /// <summary>Datab
         /// Request for cinema data through OMDB Api.
         /// https://docs.microsoft.com/en-us/dotnet/framework/network-programming/how-to-request-data-using-the-webrequest-class
         /// </summary>
-        public Movie requestMovieDataByName(string filmName)
+        public Movie requestMovieDataByName(string filmName, int filmYear)
         {
-            string requestUrl = String.Format("{0}t={1}", apiUrl, filmName);
+            string requestUrl = String.Format("{0}t={1}&y={2}", apiUrl, filmName, filmYear);
             WebRequest request = WebRequest.Create(requestUrl);
             WebResponse response = request.GetResponse();
 
@@ -32,16 +32,25 @@ namespace MainLogic
 
                 // https://stackoverflow.com/a/20030888
                 var result = JsonConvert.DeserializeObject<dynamic>(sr.ReadToEnd());
-                Movie requestedMovie = new Movie
+                if (result.Response == "True")
                 {
-                    Name = result.Title,
-                    Genre = result.Genre,
-                    Duration = int.Parse(result.Runtime),
-                    Year = result.Year
-                };
+                    Movie requestedMovie = new Movie
+                    {
+                        Name = result.Title,
+                        Genre = result.Genre,
+                        Duration = int.Parse(result.Runtime.ToString().Split()[0]),
+                        Year = int.Parse(result.Year.ToString()),
+                        Plot = result.Plot
+                    };
 
-                response.Close();
-                return requestedMovie;
+                    response.Close();
+                    return requestedMovie;
+                } else
+                {
+                    response.Close();
+                    throw new HttpListenerException((int)HttpStatusCode.NotFound, "The film wasn't found.");
+                }
+               
             } else {
                 throw new HttpListenerException((int)HttpStatusCode.NotFound, "The film wasn't found.");
             }
