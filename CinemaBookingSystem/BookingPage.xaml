@@ -26,10 +26,22 @@
         <Button x:Name="ButtonBook"  Content="Book" Grid.Column="2" HorizontalAlignment="Stretch" Margin="10" Grid.Row="5" VerticalAlignment="Stretch" FontSize="14" FontWeight="Bold" FontStyle="Italic" Click="ButtonBook_Click" />
         <ComboBox x:Name="ComboBoxCinemas" Grid.Column="1" HorizontalAlignment="Stretch" Margin="15" Grid.Row="1" VerticalAlignment="Stretch" FontSize="16" SelectionChanged="ComboBoxCinemas_SelectionChanged" DisplayMemberPath="Name"/>
         <ListBox x:Name="ListBoxFilms" HorizontalAlignment="Stretch" Margin="12" Grid.Row="2" VerticalAlignment="Stretch" Grid.ColumnSpan="3" FontSize="16" SelectionChanged="ListBoxFilms_SelectionChanged" RenderTransformOrigin="0.5,0.5">
+            <ListBox.ToolTip>
+                <ToolTip Width="200" Height="50">
+                    <TextBlock Text="Please, move to the movie's title to read it's plot." TextWrapping="Wrap"/>
+                </ToolTip>
+            </ListBox.ToolTip>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock FontSize="15">
+                            <TextBlock.ToolTip>
+                                <ToolTip Width="800" Height="200" Background="Black">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Movie.Plot}" TextWrapping="Wrap" Foreground="White"/>
+                                    </StackPanel>
+                                </ToolTip>
+                            </TextBlock.ToolTip>
                             (<TextBlock Text="{Binding Time}" Foreground="Red"/>) <TextBlock Text="{Binding Movie.Name}" FontWeight="UltraBlack" FontStyle="Italic"></TextBlock>
                         </TextBlock>
                         <TextBlock FontSize="13">

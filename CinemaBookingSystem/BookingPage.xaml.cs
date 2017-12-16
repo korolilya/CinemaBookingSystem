@@ -28,7 +28,9 @@ namespace CinemaBookingSystem
         public BookingPage()
         {
             InitializeComponent();            
-            ComboBoxCinemas.ItemsSource = _repository.Cinemas.ToList();           
+            ComboBoxCinemas.ItemsSource = _repository.Cinemas.ToList();
+            ToolTipService.ShowDurationProperty.OverrideMetadata(
+            typeof(DependencyObject), new FrameworkPropertyMetadata(Int32.MaxValue));
         }
 
         private void ListBoxFilms_SelectionChanged(object sender, SelectionChangedEventArgs e)
