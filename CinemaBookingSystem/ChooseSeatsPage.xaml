@@ -32,9 +32,9 @@
         <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" Margin="80,10,80,60" TextAlignment="Center" Grid.Row="3" Text="Total Price" VerticalAlignment="Stretch" FontSize="24" FontWeight="Bold" FontStyle="Italic"/>
         <TextBlock Grid.Column="2" HorizontalAlignment="Stretch" Margin="30,70,30,125" TextAlignment="Center" Grid.Row="2" Text="Quantity" VerticalAlignment="Stretch" FontSize="24" FontStyle="Italic" FontWeight="Bold"/>
         <Button Content="Book" Grid.Column="2" HorizontalAlignment="Stretch" Margin="50,40,50,40" Grid.Row="3" VerticalAlignment="Stretch"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="25" Margin="130,64,130,0" Grid.Row="3" Text="0" TextAlignment="Center" VerticalAlignment="Top"/>
-        <TextBox Grid.Column="2" HorizontalAlignment="Stretch" Height="25" Margin="70,67,70,0" TextAlignment="Center" Text="0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox Grid.Column="2" HorizontalAlignment="Stretch" Height="25" Margin="70,150,70,40" Grid.Row="2" TextAlignment="Center"  Text="0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox Name="TextBoxTotal" Grid.Column="1" HorizontalAlignment="Stretch" Height="25" Margin="130,64,130,0" Grid.Row="3" Text="0" TextAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox Name="TextBoxPrice" Grid.Column="2" HorizontalAlignment="Stretch" Height="25" Margin="70,67,70,0" TextAlignment="Center" Text="0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox Name="TextBoxQuantity" Grid.Column="2" HorizontalAlignment="Stretch" Height="25" Margin="70,150,70,40" Grid.Row="2" TextAlignment="Center"  Text="0" VerticalAlignment="Top" FontSize="14"/>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="6*"/>
