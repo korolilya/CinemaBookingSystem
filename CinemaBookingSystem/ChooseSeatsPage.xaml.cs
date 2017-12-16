@@ -22,21 +22,15 @@ namespace CinemaBookingSystem
     /// </summary>
     public partial class ChooseSeatsPage : Page
     {
-        Repository _repository;
-        //BookingPage _bp;
-        public ChooseSeatsPage(Repository repository, BookingPage bp)
+        Repository _repository;        
+        public ChooseSeatsPage(Repository repository, Seance seance)
         {
             InitializeComponent();
-            AddToGrid(25, CreateButtons(25));
-           // _bp = bp;
-            _repository = repository;
-            bp.MovieInfo +=RefreshPrice;
+            AddToGrid(25, CreateButtons(25));          
+            textBlockPrice.Text = $"{seance.PriceOfTickets}";
         }
 
-        public void RefreshPrice(Seance movie)
-        {
-            textBlockPrice.Text = $"{movie.Movie.Name}";
-        }
+       
         private Button[,] CreateButtons(int quantity)
         {
             Button[,] buttons = new Button[quantity, quantity];
