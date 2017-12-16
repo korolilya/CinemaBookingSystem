@@ -69,6 +69,10 @@
     <Compile Include="Migrations\201712101746235_NewChanges.Designer.cs">
       <DependentUpon>201712101746235_NewChanges.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712161121307_Add Plot To Movie.cs" />
+    <Compile Include="Migrations\201712161121307_Add Plot To Movie.Designer.cs">
+      <DependentUpon>201712161121307_Add Plot To Movie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712101746235_NewChanges.resx">
       <DependentUpon>201712101746235_NewChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712161121307_Add Plot To Movie.resx">
+      <DependentUpon>201712161121307_Add Plot To Movie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

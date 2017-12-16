@@ -6,6 +6,7 @@ namespace MainLogic.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+  
 
     internal sealed class Configuration : DbMigrationsConfiguration<CinemaBookingSystem.CinemasDB>
     {
@@ -16,10 +17,14 @@ namespace MainLogic.Migrations
 
         protected override void Seed(CinemaBookingSystem.CinemasDB context)
         {
-           
+            Server apiOMDB = new Server();
+
             Movie[] movies =
             {
-                new Movie
+                apiOMDB.requestMovieDataByName("Logan", 2017),
+                apiOMDB.requestMovieDataByName("Mission: Impossible", 1996),
+                apiOMDB.requestMovieDataByName("It", 2017)
+                /*new Movie
                 {
                     Name="Logan",
                     Genre="Drama",
@@ -39,7 +44,7 @@ namespace MainLogic.Migrations
                     Genre="Horror",
                     Duration=100,
                     Year= 2017
-                }
+                }*/
             };
 
             Cinema[] cinemas =
