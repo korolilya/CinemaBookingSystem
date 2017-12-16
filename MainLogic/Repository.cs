@@ -29,11 +29,7 @@ namespace MainLogic
             get
             {
                 using (var context = new CinemasDB())
-                    return context.Movies
-                    /*.Include(m => m.Name)
-                    .Include(m => m.Genre)
-                    .Include(m => m.Duration)
-                    .Include(m => m.Year)*/
+                    return context.Movies                   
                     .ToList();
             }
         }

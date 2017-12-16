@@ -40,15 +40,16 @@ namespace CinemaBookingSystem
                 {
                     buttons[i, j] = new Button();
                     buttons[i, j].Width = 35;
-                    buttons[i, j].Height = 3;
+                    buttons[i, j].Height = 35;
                     buttons[i, j].VerticalAlignment = System.Windows.VerticalAlignment.Top;
                     buttons[i, j].HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
                     buttons[i, j].Margin = new Thickness(5);
                     buttons[i, j].Click += (object sender, RoutedEventArgs e) =>
                     {
-                        TextBoxQuantity.Text = (Int32.Parse(TextBoxQuantity.Text) + 1).ToString();
-                        TextBoxTotal.Text = ((Int32.Parse(TextBoxTotal.Text) + Int32.Parse(TextBoxPrice.Text)).ToString());
-                        //buttons[i, j].IsEnabled = true;
+                        textBlockQuantity.Text = (Int32.Parse(textBlockQuantity.Text) + 1).ToString();
+                        textBlockTotalPrice.Text = ((Int32.Parse(textBlockTotalPrice.Text) + Int32.Parse(textBlockPrice.Text)).ToString());
+                        buttons[i, j].IsEnabled = false;
+                        
                     };
 
                 }
