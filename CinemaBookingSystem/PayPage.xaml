@@ -27,8 +27,8 @@
         <TextBlock Grid.Row ="1"  HorizontalAlignment="Stretch" Margin="140,60,10,0" Height="30" TextAlignment="Center" Text="CardNumber(16 num)" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="20"/>
         <TextBlock Grid.Row="1" HorizontalAlignment="Stretch" Margin="140,130,10,0" Text="Security Code(3 num)" Height="30" TextAlignment="Center" VerticalAlignment="Top" FontSize="20" FontStyle="Italic" FontWeight="Bold"/>
         <TextBlock Grid.Row="1" HorizontalAlignment="Stretch" Margin="140,200,10,0" Text="Total Price" TextAlignment="Center" Height="30" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="20"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="30" Margin="10,60,130,0" Grid.Row="1" TextAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="30" Margin="10,130,130,0" Grid.Row="1" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox Name="TextboxCardNumber" Grid.Column="1" HorizontalAlignment="Stretch" Height="30" Margin="12,60,128,0" Grid.Row="1" TextAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox Name="TextboxCode" Grid.Column="1" HorizontalAlignment="Stretch" Height="30" Margin="10,130,130,0" Grid.Row="1" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
         <TextBlock x:Name="textblockTotalPrice" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Margin="10,200,100,0" TextAlignment="Center" Height="30" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="20"/>
         <TextBlock Grid.Row="1" HorizontalAlignment="Stretch" Margin="200,10,200,0" TextAlignment="Center" Text="If you want you can pay now by card" VerticalAlignment="Top" Height="30" Grid.ColumnSpan="2" FontSize="20" FontStyle="Italic" FontWeight="Bold"/>
         <Button x:Name="buttonPay" Content="Pay" Grid.Column="1" HorizontalAlignment="Stretch" Margin="250,220,30,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" FontStyle="Italic" FontWeight="Bold" Click="buttonPay_Click"/>
