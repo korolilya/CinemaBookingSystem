@@ -48,8 +48,15 @@ namespace CinemaBookingSystem
         
         private void ButtonBook_Click(object sender, RoutedEventArgs e)
         {
-            var movie = ListBoxFilms.SelectedItem as Seance;          
+            var movie = ListBoxFilms.SelectedItem as Seance;
+            if(movie!=null)
+            {
             NavigationService.Navigate(new ChooseSeatsPage(_repository, movie));
+            }
+            else
+            {
+                MessageBox.Show("Please, choose a seance!");
+            }
         }
 
         

@@ -47,11 +47,13 @@ namespace CinemaBookingSystem
                     buttons[i, j].VerticalAlignment = System.Windows.VerticalAlignment.Top;
                     buttons[i, j].HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
                     buttons[i, j].Margin = new Thickness(5);
+                    buttons[i, j].Background = Brushes.Green;
                     buttons[i, j].Click += (object sender, RoutedEventArgs e) =>
                     {
                         textBlockQuantity.Text = (Int32.Parse(textBlockQuantity.Text) + 1).ToString();
                         textBlockTotalPrice.Text = ((Int32.Parse(textBlockTotalPrice.Text) + Int32.Parse(textBlockPrice.Text)).ToString());
-                        (sender as Button).IsEnabled = false;
+                        (sender as Button).Background = Brushes.Red;
+                        (sender as Button).IsHitTestVisible = false;
                     };
 
                 }
