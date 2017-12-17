@@ -45,7 +45,14 @@ namespace CinemaBookingSystem
         private void ComboBoxCinemas_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var cinema = ComboBoxCinemas.SelectedItem as Cinema;
+            if (cinema!=null)
+            {
             ListBoxFilms.ItemsSource = cinema.Movies; 
+            }
+            else
+            {
+                MessageBox.Show("Cinema is not chosen!");
+            }
            
         }
         

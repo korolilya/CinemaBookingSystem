@@ -109,7 +109,7 @@ namespace MainLogic.Migrations
                        },
                    new Seance
                    {
-                    Time= new DateTime(2017, 22, 10, 20,15,0),
+                    Time= new DateTime(2017, 12, 10, 20,15,0),
                     Movie= movies[4],
                     QuantityOfTickets=35,
                     PriceOfTickets= 850

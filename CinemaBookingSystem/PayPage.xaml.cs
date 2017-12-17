@@ -33,10 +33,10 @@ namespace CinemaBookingSystem
             _bp = bp;
             textblockTime.Text = $"{seance.Time}";
             textblockFilm.Text = $"{seance.Movie.Name}";
-            textblockQuantOfTick.Text =$"{ chooseSeatsPage.textBlockQuantity.Text}";
+            textblockQuantOfTick.Text = $"{ chooseSeatsPage.textBlockQuantity.Text}";
             textblockTotalPrice.Text = $"{chooseSeatsPage.textBlockTotalPrice.Text}";
         }
-       
+
         private void buttonPayByCah_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show($"Show this code in the bar to get your tickets \nCode: {_repository.RandomString()}");
@@ -45,22 +45,37 @@ namespace CinemaBookingSystem
             NavigationService.Navigate(_bp);
         }
 
+        
+
         private void buttonPay_Click(object sender, RoutedEventArgs e)
         {
-            if(TextboxCardNumber.Text.Count() == 16)
+            if (TextboxCardNumber.Text.Count() != 16)
             {
-                if (TextboxCode.Text.Count() == 3)
-                {
-                    MessageBox.Show(($"You payment was done successfully! Take your tickets at the cashbox."));
-                    _repository.ReplacePreparedSeatsToBooked(_seance);
-                    _repository.RemoveQuantOfTickets(_seance, int.Parse(textblockQuantOfTick.Text));
-                    NavigationService.Navigate(_bp);
-                }
-                else
-                    MessageBox.Show(($"Your security code must include 3 numbers"));
-            }
-            else
                 MessageBox.Show(($"Your card number must include 16 numbers"));
+                return;
+            }
+            Int64 n;
+            if (!Int64.TryParse(TextboxCardNumber.Text, out n))
+            {
+                MessageBox.Show(($"Your card number must include only numbers"), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (TextboxCode.Text.Count() != 3)
+            {
+                MessageBox.Show(($"Your security code must include 3 numbers"));
+                return;
+            }
+            int c;
+            if (!int.TryParse(TextboxCode.Text, out c))
+            {
+                MessageBox.Show(($"Your security code must include only numbers"), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            MessageBox.Show(($"You payment was done successfully! Take your tickets at the cashbox."));
+            _repository.ReplacePreparedSeatsToBooked(_seance);
+            _repository.RemoveQuantOfTickets(_seance, int.Parse(textblockQuantOfTick.Text));           
+            NavigationService.Navigate(_bp);
         }
     }
 }
+
