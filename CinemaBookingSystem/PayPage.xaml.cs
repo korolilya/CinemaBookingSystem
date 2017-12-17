@@ -46,8 +46,19 @@ namespace CinemaBookingSystem
 
         private void buttonPay_Click(object sender, RoutedEventArgs e)
         {
-            _repository.RemoveQuantOfTickets(_seance, int.Parse(textblockQuantOfTick.Text));
-            NavigationService.Navigate(_bp);
+            if(TextboxCardNumber.Text.Count() == 16)
+            {
+                if (TextboxCode.Text.Count() == 3)
+                {
+                    MessageBox.Show(($"You payment was done successfully! Take your tickets at the cashbox."));
+                    _repository.RemoveQuantOfTickets(_seance, int.Parse(textblockQuantOfTick.Text));
+                    NavigationService.Navigate(_bp);
+                }
+                else
+                    MessageBox.Show(($"Your security code must include 3 numbers"));
+            }
+            else
+                MessageBox.Show(($"Your card number must include 16 numbers"));
         }
     }
 }
