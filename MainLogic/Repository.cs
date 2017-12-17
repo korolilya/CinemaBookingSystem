@@ -6,6 +6,9 @@ using System.Linq;
 using System;
 using System.Windows.Controls;
 using System.Windows;
+using System.IO;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace MainLogic
 {
@@ -64,6 +67,41 @@ namespace MainLogic
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
+        public void AddPrepareToBookSeats(Seance seance, List<string> booked)
+        {
+            string json = File.ReadAllText("../../bookedSeats.json");
+            dynamic jsonObj = JsonConvert.DeserializeObject(json);
+            jsonObj["prepareToBook"][seance.Id.ToString()] = JsonConvert.SerializeObject(booked);
+            string output = JsonConvert.SerializeObject(jsonObj, Formatting.Indented);
+            File.WriteAllText("../../bookedSeats.json", output);
+        }
+
+        public void ReplacePreparedSeatsToBooked(Seance seance)
+        {
+            string json = File.ReadAllText("../../bookedSeats.json");
+            dynamic jsonObj = JsonConvert.DeserializeObject(json);
+            string preparedSeats = jsonObj["prepareToBook"][seance.Id.ToString()];
+            jsonObj["prepareToBook"][seance.Id.ToString()] = "";
+            jsonObj["bookedSeats"][seance.Id.ToString()] = preparedSeats;
+            string output = JsonConvert.SerializeObject(jsonObj, Formatting.Indented);
+            File.WriteAllText("../../bookedSeats.json", output);
+        }
+
+        public List<string> GetBookedSeats(Seance seance)
+        {
+            string json = File.ReadAllText("../../bookedSeats.json");
+            dynamic jsonObj = JsonConvert.DeserializeObject(json);
+            List<string> bookedSeats = new List<string>();
+            if (jsonObj["bookedSeats"][seance.Id.ToString()] != null && jsonObj["bookedSeats"][seance.Id.ToString()] != "")
+            {
+                string[] stringWithSeats = jsonObj["bookedSeats"][seance.Id.ToString()].ToString().Split(',');
+                foreach (string item in stringWithSeats)
+                {
+                    bookedSeats.Add(item.Replace("[", "").Replace("]", "").Replace("\"", string.Empty));
+                }
+            }
+            return bookedSeats;
+        }
 
     }
 }

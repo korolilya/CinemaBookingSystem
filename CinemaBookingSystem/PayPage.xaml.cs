@@ -40,12 +40,14 @@ namespace CinemaBookingSystem
         private void buttonPayByCah_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show($"Show this code in the bar to get your tickets{_repository.RandomString()}");
+            _repository.ReplacePreparedSeatsToBooked(_seance);
             _repository.RemoveQuantOfTickets(_seance, int.Parse(textblockQuantOfTick.Text));
             NavigationService.Navigate(_bp);
         }
 
         private void buttonPay_Click(object sender, RoutedEventArgs e)
         {
+            _repository.ReplacePreparedSeatsToBooked(_seance);
             _repository.RemoveQuantOfTickets(_seance, int.Parse(textblockQuantOfTick.Text));
             NavigationService.Navigate(_bp);
         }
