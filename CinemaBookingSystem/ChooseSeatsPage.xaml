@@ -17,11 +17,11 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <TextBlock Foreground="Aqua" HorizontalAlignment="Stretch" Margin="0" TextAlignment="Center" Text="1" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
-            <TextBlock Foreground="Aqua" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0" TextAlignment="Center" Text="2" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
-            <TextBlock Foreground="Aqua" Grid.Row="2" HorizontalAlignment="Stretch" Margin="0" TextAlignment="Center" Text="3" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
-            <TextBlock Foreground="Aqua" Grid.Row="3" HorizontalAlignment="Stretch" Margin="0" TextAlignment="Center" Text="4" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
-            <TextBlock Foreground="Aqua" Grid.Row="4" HorizontalAlignment="Stretch" Margin="0" TextAlignment="Center" Text="5" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBlock Foreground="White" HorizontalAlignment="Stretch" Margin="0" TextAlignment="Center" Text="1" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBlock Foreground="White" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0" TextAlignment="Center" Text="2" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBlock Foreground="White" Grid.Row="2" HorizontalAlignment="Stretch" Margin="0" TextAlignment="Center" Text="3" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBlock Foreground="White" Grid.Row="3" HorizontalAlignment="Stretch" Margin="0" TextAlignment="Center" Text="4" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBlock Foreground="White" Grid.Row="4" HorizontalAlignment="Stretch" Margin="0" TextAlignment="Center" Text="5" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="1" Margin="0,0,20,0">
             <Grid.ColumnDefinitions>
@@ -33,13 +33,13 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Foreground="Aqua" HorizontalAlignment="Stretch" Margin="5" TextAlignment="Center" Text="1" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
-            <TextBlock Foreground="Aqua" Grid.Column="1" HorizontalAlignment="Stretch" Margin="5" TextAlignment="Center" Text="2" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
-            <TextBlock Foreground="Aqua" Grid.Column="2" HorizontalAlignment="Stretch" Margin="5" TextAlignment="Center" Text="3" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
-            <TextBlock Foreground="Aqua" Grid.Column="3" HorizontalAlignment="Stretch" Margin="5" TextAlignment="Center" Text="4" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
-            <TextBlock Foreground="Aqua" Grid.Column="4" HorizontalAlignment="Stretch" Margin="5" TextAlignment="Center" Text="5" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
-            <TextBlock Foreground="Aqua" Grid.Column="5" HorizontalAlignment="Stretch" Margin="5" TextAlignment="Center" Text="6" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
-            <TextBlock Foreground="Aqua" Grid.Column="6" HorizontalAlignment="Stretch" Margin="5" TextAlignment="Center" Text="7" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBlock Foreground="White" HorizontalAlignment="Stretch" Margin="5" TextAlignment="Center" Text="1" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBlock Foreground="White" Grid.Column="1" HorizontalAlignment="Stretch" Margin="5" TextAlignment="Center" Text="2" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBlock Foreground="White" Grid.Column="2" HorizontalAlignment="Stretch" Margin="5" TextAlignment="Center" Text="3" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBlock Foreground="White" Grid.Column="3" HorizontalAlignment="Stretch" Margin="5" TextAlignment="Center" Text="4" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBlock Foreground="White" Grid.Column="4" HorizontalAlignment="Stretch" Margin="5" TextAlignment="Center" Text="5" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBlock Foreground="White" Grid.Column="5" HorizontalAlignment="Stretch" Margin="5" TextAlignment="Center" Text="6" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBlock Foreground="White" Grid.Column="6" HorizontalAlignment="Stretch" Margin="5" TextAlignment="Center" Text="7" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
         </Grid>
         <Grid Name="Seats" Grid.Column="1" Margin="10" Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -59,14 +59,14 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
         </Grid>
-        <TextBlock Foreground="Aqua" Grid.Column="1" HorizontalAlignment="Stretch" TextAlignment="Center" Margin="30" Text="Choose The Seats" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBlock Foreground="Aqua" Grid.Column="2" HorizontalAlignment="Stretch" Margin="70,10,70,30" Text="Ticket Price" TextAlignment="Center" VerticalAlignment="Stretch" FontSize="24" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBlock Foreground="Aqua" Grid.Column="1" HorizontalAlignment="Stretch" Margin="80,10,80,60" TextAlignment="Center" Grid.Row="3" Text="Total Price" VerticalAlignment="Stretch" FontSize="24" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBlock Foreground="Aqua" Grid.Column="2" HorizontalAlignment="Stretch" Margin="30,70,30,125" TextAlignment="Center" Grid.Row="2" Text="Quantity" VerticalAlignment="Stretch" FontSize="24" FontStyle="Italic" FontWeight="Bold"/>
+        <TextBlock Foreground="White" Grid.Column="1" HorizontalAlignment="Stretch" TextAlignment="Center" Margin="30" Text="Choose The Seats" VerticalAlignment="Stretch" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
+        <TextBlock Foreground="White" Grid.Column="2" HorizontalAlignment="Stretch" Margin="70,10,70,30" Text="Ticket Price" TextAlignment="Center" VerticalAlignment="Stretch" FontSize="24" FontWeight="Bold" FontStyle="Italic"/>
+        <TextBlock Foreground="White" Grid.Column="1" HorizontalAlignment="Stretch" Margin="80,10,80,60" TextAlignment="Center" Grid.Row="3" Text="Total Price" VerticalAlignment="Stretch" FontSize="24" FontWeight="Bold" FontStyle="Italic"/>
+        <TextBlock Foreground="White" Grid.Column="2" HorizontalAlignment="Stretch" Margin="30,70,30,125" TextAlignment="Center" Grid.Row="2" Text="Quantity" VerticalAlignment="Stretch" FontSize="24" FontStyle="Italic" FontWeight="Bold"/>
         <Button Content="Book" Grid.Column="2" HorizontalAlignment="Stretch" Margin="50,40,50,40" Grid.Row="3" VerticalAlignment="Stretch" Click="Button_Click"/>
-        <TextBlock Foreground="Aqua" x:Name="textBlockTotalPrice" Grid.Column="1" HorizontalAlignment="Stretch" Height="25" Margin="130,64,130,0" Grid.Row="3" Text="0" TextAlignment="Center" VerticalAlignment="Top"/>
-        <TextBlock Foreground="Aqua" x:Name="textBlockPrice" Grid.Column="2" HorizontalAlignment="Stretch" Height="25" Margin="70,67,70,0" TextAlignment="Center" Text="0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBlock Foreground="Aqua" x:Name="textBlockQuantity" Grid.Column="2" HorizontalAlignment="Stretch" Height="25" Margin="70,150,70,40" Grid.Row="2" TextAlignment="Center"  Text="0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock Foreground="White" x:Name="textBlockTotalPrice" Grid.Column="1" HorizontalAlignment="Stretch" Height="25" Margin="130,64,130,0" Grid.Row="3" Text="0" TextAlignment="Center" VerticalAlignment="Top"/>
+        <TextBlock Foreground="White" x:Name="textBlockPrice" Grid.Column="2" HorizontalAlignment="Stretch" Height="25" Margin="70,67,70,0" TextAlignment="Center" Text="0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock Foreground="White" x:Name="textBlockQuantity" Grid.Column="2" HorizontalAlignment="Stretch" Height="25" Margin="70,150,70,40" Grid.Row="2" TextAlignment="Center"  Text="0" VerticalAlignment="Top" FontSize="14"/>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="6*"/>
