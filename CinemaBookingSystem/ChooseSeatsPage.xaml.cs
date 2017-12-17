@@ -49,6 +49,7 @@ namespace CinemaBookingSystem
                         textBlockQuantity.Text = (Int32.Parse(textBlockQuantity.Text) + 1).ToString();
                         textBlockTotalPrice.Text = ((Int32.Parse(textBlockTotalPrice.Text) + Int32.Parse(textBlockPrice.Text)).ToString());
                         //buttons[i, j].IsEnabled = false;
+
                         
                     };
 

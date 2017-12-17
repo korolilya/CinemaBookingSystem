@@ -36,9 +36,9 @@
                     <StackPanel>
                         <TextBlock FontSize="15">
                             <TextBlock.ToolTip>
-                                <ToolTip Width="800" Height="200" Background="Black">
+                                <ToolTip Width="800" Height="200" Background="White">
                                     <StackPanel>
-                                        <TextBlock Text="{Binding Movie.Plot}" TextWrapping="Wrap" Foreground="White"/>
+                                        <TextBlock Text="{Binding Movie.Plot}" TextWrapping="Wrap" Foreground="Black"/>
                                     </StackPanel>
                                 </ToolTip>
                             </TextBlock.ToolTip>

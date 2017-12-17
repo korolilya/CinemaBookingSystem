@@ -51,5 +51,7 @@ namespace CinemaBookingSystem
             var movie = ListBoxFilms.SelectedItem as Seance;          
             NavigationService.Navigate(new ChooseSeatsPage(_repository, movie));
         }
+
+        
     }
 }
