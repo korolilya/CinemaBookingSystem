@@ -28,6 +28,7 @@ namespace CinemaBookingSystem
         {
             InitializeComponent();
             _seance = seance;
+            _repository = repository;
             AddToGrid(25, CreateButtons(25));          
             textBlockPrice.Text = $"{seance.PriceOfTickets}";
         }
@@ -75,7 +76,7 @@ namespace CinemaBookingSystem
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new PayPage(_seance, this));
+            NavigationService.Navigate(new PayPage(_seance, this, _repository));
         }
     }
 }

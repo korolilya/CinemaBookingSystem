@@ -45,7 +45,16 @@ namespace MainLogic
                      .ToList();
              }
          }*/
+         public void RemoveQuantOfTickets (Seance seance, int TotalQuantityOfTickets)
+        {
+            using (var context= new CinemasDB())
+            {
+                var seanceFromDB = context.Seances.Find(seance.Id);
 
+                seanceFromDB.QuantityOfTickets -= TotalQuantityOfTickets;
+                context.SaveChanges();
+            }
+        }
         
 
     }

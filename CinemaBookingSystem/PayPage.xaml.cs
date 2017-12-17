@@ -1,4 +1,5 @@
 ﻿using CinemaBookingSystem.Entities;
+using MainLogic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,19 +22,27 @@ namespace CinemaBookingSystem
     /// </summary>
     public partial class PayPage : Page
     {
-
-        public PayPage(Seance seance, ChooseSeatsPage chooseSeatsPage)
+        Repository _repository;
+        Seance _seance;
+        public PayPage(Seance seance, ChooseSeatsPage chooseSeatsPage, Repository repository)
         {
             InitializeComponent();
+            _seance = seance;
+            _repository = repository;
             textblockTime.Text = $"{seance.Time}";
             textblockFilm.Text = $"{seance.Movie.Name}";
             textblockQuantOfTick.Text =$"{ chooseSeatsPage.textBlockQuantity.Text}";
             textblockTotalPrice.Text = $"{chooseSeatsPage.textBlockTotalPrice.Text}";
         }
-
+       
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void buttonPay_Click(object sender, RoutedEventArgs e)
+        {
+            _repository.RemoveQuantOfTickets(_seance, int.Parse(textblockQuantOfTick.Text));
         }
     }
 }

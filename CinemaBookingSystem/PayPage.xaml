@@ -31,7 +31,7 @@
         <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="30" Margin="10,130,130,0" Grid.Row="1" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
         <TextBlock x:Name="textblockTotalPrice" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Margin="10,200,100,0" TextAlignment="Center" Height="30" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="20"/>
         <TextBlock Grid.Row="1" HorizontalAlignment="Stretch" Margin="200,10,200,0" TextAlignment="Center" Text="If you want you can pay now by card" VerticalAlignment="Top" Height="30" Grid.ColumnSpan="2" FontSize="20" FontStyle="Italic" FontWeight="Bold"/>
-        <Button Content="Pay" Grid.Column="1" HorizontalAlignment="Stretch" Margin="250,220,30,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" FontStyle="Italic" FontWeight="Bold"/>
+        <Button x:Name="buttonPay" Content="Pay" Grid.Column="1" HorizontalAlignment="Stretch" Margin="250,220,30,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" FontStyle="Italic" FontWeight="Bold" Click="buttonPay_Click"/>
         <Button Content="No, Thanks" Grid.Column="1" HorizontalAlignment="Stretch" Margin="200,16,30,20" Grid.Row="1" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" FontStyle="Italic" Click="Button_Click"/>
     </Grid>
 </Page>
