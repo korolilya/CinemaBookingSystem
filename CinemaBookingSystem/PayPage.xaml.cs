@@ -24,25 +24,30 @@ namespace CinemaBookingSystem
     {
         Repository _repository;
         Seance _seance;
-        public PayPage(Seance seance, ChooseSeatsPage chooseSeatsPage, Repository repository)
+        BookingPage _bp;
+        public PayPage(Seance seance, ChooseSeatsPage chooseSeatsPage, Repository repository, BookingPage bp)
         {
             InitializeComponent();
             _seance = seance;
             _repository = repository;
+            _bp = bp;
             textblockTime.Text = $"{seance.Time}";
             textblockFilm.Text = $"{seance.Movie.Name}";
             textblockQuantOfTick.Text =$"{ chooseSeatsPage.textBlockQuantity.Text}";
             textblockTotalPrice.Text = $"{chooseSeatsPage.textBlockTotalPrice.Text}";
         }
        
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void buttonPayByCah_Click(object sender, RoutedEventArgs e)
         {
-            
+            MessageBox.Show($"Show this code in the bar to get your tickets{_repository.RandomString()}");
+            _repository.RemoveQuantOfTickets(_seance, int.Parse(textblockQuantOfTick.Text));
+            NavigationService.Navigate(_bp);
         }
 
         private void buttonPay_Click(object sender, RoutedEventArgs e)
         {
             _repository.RemoveQuantOfTickets(_seance, int.Parse(textblockQuantOfTick.Text));
+            NavigationService.Navigate(_bp);
         }
     }
 }

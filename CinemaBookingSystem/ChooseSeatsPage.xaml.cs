@@ -24,11 +24,13 @@ namespace CinemaBookingSystem
     {
         Repository _repository;
         Seance _seance;
-        public ChooseSeatsPage(Repository repository, Seance seance)
+        BookingPage _bp;
+        public ChooseSeatsPage(Repository repository, Seance seance, BookingPage bp)
         {
             InitializeComponent();
             _seance = seance;
             _repository = repository;
+            _bp = bp;
             AddToGrid(25, CreateButtons(25));          
             textBlockPrice.Text = $"{seance.PriceOfTickets}";
         }
@@ -52,8 +54,8 @@ namespace CinemaBookingSystem
                     {
                         textBlockQuantity.Text = (Int32.Parse(textBlockQuantity.Text) + 1).ToString();
                         textBlockTotalPrice.Text = ((Int32.Parse(textBlockTotalPrice.Text) + Int32.Parse(textBlockPrice.Text)).ToString());
-                        (sender as Button).Background = Brushes.Red;
-                        (sender as Button).IsHitTestVisible = false;
+                        (sender as Button).IsEnabled = false;
+                        //(sender as Button).Foreground = Brushes.Red;
                     };
                 }
             }
@@ -75,7 +77,7 @@ namespace CinemaBookingSystem
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new PayPage(_seance, this, _repository));
+            NavigationService.Navigate(new PayPage(_seance, this, _repository, _bp));
         }
     }
 }

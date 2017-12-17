@@ -55,7 +55,15 @@ namespace MainLogic
                 context.SaveChanges();
             }
         }
-        
+
+        private static Random random = new Random();
+        public string RandomString()
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, 8)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
 
     }
 }
