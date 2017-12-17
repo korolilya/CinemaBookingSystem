@@ -11,7 +11,7 @@ namespace MainLogic
 {
     public class Repository
     {
-        public event Action<Seance> MovieInfo;
+        
 
         public IEnumerable<Cinema> Cinemas
         {
@@ -34,17 +34,7 @@ namespace MainLogic
             }
         }
 
-        /* public IEnumerable<Seance> Seance
-         {
-             get
-             {
-                 using (var context = new CinemasDB())
-                     return context.Seances
-                     .Include(s => s.CinemaFilm)
-                     .Include(s=>s.Movie)                   
-                     .ToList();
-             }
-         }*/
+        
          public void RemoveQuantOfTickets (Seance seance, int TotalQuantityOfTickets)
         {
             using (var context= new CinemasDB())
@@ -63,6 +53,8 @@ namespace MainLogic
             return new string(Enumerable.Repeat(chars, 8)
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
+       
 
 
     }

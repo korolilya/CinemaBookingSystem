@@ -28,8 +28,10 @@ namespace CinemaBookingSystem
         public BookingPage()
         {
             InitializeComponent();
+            ListBoxFilms.ItemsSource = null;
             ComboBoxCinemas.ItemsSource = null; 
             ComboBoxCinemas.ItemsSource = _repository.Cinemas.ToList();
+            //these two lines were taken from https://stackoverflow.com/questions/4821163/how-absolutely-set-tooltipservice-showdurationproperty
             ToolTipService.ShowDurationProperty.OverrideMetadata(
             typeof(DependencyObject), new FrameworkPropertyMetadata(Int32.MaxValue));
         }
@@ -60,9 +62,6 @@ namespace CinemaBookingSystem
             }
         }
 
-        private void ButtonNewSeance_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new NewSeance(_repository));
-        }
+        
     }
 }
