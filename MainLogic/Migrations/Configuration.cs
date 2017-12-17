@@ -23,28 +23,13 @@ namespace MainLogic.Migrations
             {
                 apiOMDB.requestMovieDataByName("Logan", 2017),
                 apiOMDB.requestMovieDataByName("Mission: Impossible", 1996),
-                apiOMDB.requestMovieDataByName("It", 2017)
-                /*new Movie
-                {
-                    Name="Logan",
-                    Genre="Drama",
-                    Duration=186,
-                    Year= 2017
-                },
-                 new Movie
-                {
-                    Name="Mission Impossible",
-                    Genre="Action",
-                    Duration=120,
-                    Year= 2003
-                },
-                  new Movie
-                {
-                    Name="It",
-                    Genre="Horror",
-                    Duration=100,
-                    Year= 2017
-                }*/
+                apiOMDB.requestMovieDataByName("It", 2017),
+                /*apiOMDB.requestMovieDataByName("Deadpool", 2016),
+                apiOMDB.requestMovieDataByName("Star Wars: The Last Jedi", 2017),
+                apiOMDB.requestMovieDataByName("Murder on the Orient Express", 2017),
+                apiOMDB.requestMovieDataByName("Blade Runner 2049", 2017),
+                apiOMDB.requestMovieDataByName("The Hitman's Bodyguard", 2017),*/
+                
             };
 
             Cinema[] cinemas =
@@ -90,19 +75,32 @@ namespace MainLogic.Migrations
                     PriceOfTickets= 650
                        }
                    }
-               }
+               },
+              /* new Cinema
+               {
+                   Name="Kinostar",
+                   Location="метро Теплый стан",
+                   Movies= new List<Seance>
+                   {
+                       new Seance
+                       {
+                           Time= new DateTime(2017, 12, 18, 11,25,0),                   
+                    Movie= movies[6],
+                    QuantityOfTickets=200,
+                    PriceOfTickets= 250
+                       },
+                   new Seance
+                   {
+                    Time= new DateTime(2017, 12, 10, 20,15,0),
+                    Movie= movies[4],
+                    QuantityOfTickets=100,
+                    PriceOfTickets= 850
+                   }
+                   }
+                   
+               }*/
             };
-            /*Seance[] seances =
-            {
-                new Seance
-                {
-                    Time= new DateTime(2017, 11, 28, 13,40,0),
-                    Cinema= cinemas[0],
-                    Movie= movies[2],
-                    QuantityOfTickets=180,
-                    PriceOfTickets= 450
-                }
-            };*/
+            
 
             context.Movies.AddOrUpdate(
                m => m.Name,

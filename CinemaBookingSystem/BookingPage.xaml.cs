@@ -27,7 +27,8 @@ namespace CinemaBookingSystem
 
         public BookingPage()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            ComboBoxCinemas.ItemsSource = null; 
             ComboBoxCinemas.ItemsSource = _repository.Cinemas.ToList();
             ToolTipService.ShowDurationProperty.OverrideMetadata(
             typeof(DependencyObject), new FrameworkPropertyMetadata(Int32.MaxValue));
@@ -59,6 +60,9 @@ namespace CinemaBookingSystem
             }
         }
 
-        
+        private void ButtonNewSeance_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new NewSeance(_repository));
+        }
     }
 }

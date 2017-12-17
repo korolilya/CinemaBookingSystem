@@ -39,17 +39,26 @@ namespace CinemaBookingSystem
        
         private void buttonPayByCah_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"Show this code in the bar to get your tickets{_repository.RandomString()}");
-            _repository.ReplacePreparedSeatsToBooked(_seance);
+            MessageBox.Show($"Show this code in the bar to get your tickets \nCode: {_repository.RandomString()}");
             _repository.RemoveQuantOfTickets(_seance, int.Parse(textblockQuantOfTick.Text));
             NavigationService.Navigate(_bp);
         }
 
         private void buttonPay_Click(object sender, RoutedEventArgs e)
         {
-            _repository.ReplacePreparedSeatsToBooked(_seance);
-            _repository.RemoveQuantOfTickets(_seance, int.Parse(textblockQuantOfTick.Text));
-            NavigationService.Navigate(_bp);
+            if(TextboxCardNumber.Text.Count() == 16)
+            {
+                if (TextboxCode.Text.Count() == 3)
+                {
+                    MessageBox.Show(($"You payment was done successfully! Take your tickets at the cashbox."));
+                    _repository.RemoveQuantOfTickets(_seance, int.Parse(textblockQuantOfTick.Text));
+                    NavigationService.Navigate(_bp);
+                }
+                else
+                    MessageBox.Show(($"Your security code must include 3 numbers"));
+            }
+            else
+                MessageBox.Show(($"Your card number must include 16 numbers"));
         }
     }
 }
