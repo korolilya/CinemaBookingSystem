@@ -39,7 +39,7 @@ namespace CinemaBookingSystem
        
         private void buttonPayByCah_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"Show this code in the bar to get your tickets{_repository.RandomString()}");
+            MessageBox.Show($"Show this code in the bar to get your tickets \nCode: {_repository.RandomString()}");
             _repository.RemoveQuantOfTickets(_seance, int.Parse(textblockQuantOfTick.Text));
             NavigationService.Navigate(_bp);
         }
