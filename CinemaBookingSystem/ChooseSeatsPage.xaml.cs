@@ -55,7 +55,6 @@ namespace CinemaBookingSystem
                         (sender as Button).Background = Brushes.Red;
                         (sender as Button).IsHitTestVisible = false;
                     };
-
                 }
             }
             return buttons;
