@@ -56,7 +56,9 @@ namespace CinemaBookingSystem
                     buttons[i, j].Background = Brushes.Green;
                     buttons[i, j].Click += (object sender, RoutedEventArgs e) =>
                     {
-                        madeButtonClicked(sender);
+                        (sender as Button).IsEnabled = false;
+                        textBlockQuantity.Text = (Int32.Parse(textBlockQuantity.Text) + 1).ToString();
+                        textBlockTotalPrice.Text = ((Int32.Parse(textBlockTotalPrice.Text) + Int32.Parse(textBlockPrice.Text)).ToString());
                         _bookedSeats.Add(((Button)sender).Tag.ToString());
                         //(sender as Button).Foreground = Brushes.Red;
                     };
@@ -71,9 +73,6 @@ namespace CinemaBookingSystem
 
         private void madeButtonClicked(object sender)
         {
-               
-            textBlockQuantity.Text = (Int32.Parse(textBlockQuantity.Text) + 1).ToString();
-            textBlockTotalPrice.Text = ((Int32.Parse(textBlockTotalPrice.Text) + Int32.Parse(textBlockPrice.Text)).ToString());
             (sender as Button).IsEnabled = false;
         }
 

@@ -40,6 +40,7 @@ namespace CinemaBookingSystem
         private void buttonPayByCah_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show($"Show this code in the bar to get your tickets \nCode: {_repository.RandomString()}");
+            _repository.ReplacePreparedSeatsToBooked(_seance);
             _repository.RemoveQuantOfTickets(_seance, int.Parse(textblockQuantOfTick.Text));
             NavigationService.Navigate(_bp);
         }
@@ -51,6 +52,7 @@ namespace CinemaBookingSystem
                 if (TextboxCode.Text.Count() == 3)
                 {
                     MessageBox.Show(($"You payment was done successfully! Take your tickets at the cashbox."));
+                    _repository.ReplacePreparedSeatsToBooked(_seance);
                     _repository.RemoveQuantOfTickets(_seance, int.Parse(textblockQuantOfTick.Text));
                     NavigationService.Navigate(_bp);
                 }
