@@ -91,8 +91,13 @@ namespace CinemaBookingSystem
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            _repository.AddPrepareToBookSeats(_seance, _bookedSeats);
-            NavigationService.Navigate(new PayPage(_seance, this, _repository, _bp));
+            if (Convert.ToUInt32(textBlockQuantity.Text) != 0)
+            {
+                _repository.AddPrepareToBookSeats(_seance, _bookedSeats);
+                NavigationService.Navigate(new PayPage(_seance, this, _repository, _bp));
+            }
+            else
+                MessageBox.Show($"Please, choose the seats");
         }
     }
 }
