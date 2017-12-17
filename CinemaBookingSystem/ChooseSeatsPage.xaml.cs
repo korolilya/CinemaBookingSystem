@@ -22,10 +22,12 @@ namespace CinemaBookingSystem
     /// </summary>
     public partial class ChooseSeatsPage : Page
     {
-        Repository _repository;        
+        Repository _repository;
+        Seance _seance;
         public ChooseSeatsPage(Repository repository, Seance seance)
         {
             InitializeComponent();
+            _seance = seance;
             AddToGrid(25, CreateButtons(25));          
             textBlockPrice.Text = $"{seance.PriceOfTickets}";
         }
@@ -73,7 +75,7 @@ namespace CinemaBookingSystem
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new PayPage());
+            NavigationService.Navigate(new PayPage(_seance, this));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CinemaBookingSystem.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,14 @@ namespace CinemaBookingSystem
     /// </summary>
     public partial class PayPage : Page
     {
-        public PayPage()
+
+        public PayPage(Seance seance, ChooseSeatsPage chooseSeatsPage)
         {
             InitializeComponent();
+            textblockTime.Text = $"{seance.Time}";
+            textblockFilm.Text = $"{seance.Movie.Name}";
+            textblockQuantOfTick.Text =$"{ chooseSeatsPage.textBlockQuantity.Text}";
+            textblockTotalPrice.Text = $"{chooseSeatsPage.textBlockTotalPrice.Text}";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
